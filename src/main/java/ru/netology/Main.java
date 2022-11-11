@@ -52,7 +52,7 @@ public class Main {
             JSONObject jsonArrayElement = (JSONObject) o;
 
             for (int j = 0; j < column.length; j++) {
-                attr[j] = (String) jsonArrayElement.get(column[j]).toString();
+                attr[j] = jsonArrayElement.get(column[j]).toString();
             }
             Employee stf = new Employee(attr);
             staff.add(stf);
