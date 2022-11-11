@@ -48,11 +48,11 @@ public class Main {
         Object obj = pars.parse(json);
         JSONArray jsonObj = (JSONArray) obj;
 
-        for (int i = 0; i < jsonObj.size(); i++) {
-            JSONObject jsonArrayElement = (JSONObject) jsonObj.get(i);
+        for (Object o : jsonObj) {
+            JSONObject jsonArrayElement = (JSONObject) o;
 
             for (int j = 0; j < column.length; j++) {
-               attr[j] = (String) jsonArrayElement.get(column[j]).toString();
+                attr[j] = (String) jsonArrayElement.get(column[j]).toString();
             }
             Employee stf = new Employee(attr);
             staff.add(stf);
